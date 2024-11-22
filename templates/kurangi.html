@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurangi Barang</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kurangi Barang</h1>
+        {% if success %}
+            <p>Barang berhasil dikurangi!</p>
+        {% endif %}
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <input type="text" name="kode" placeholder="Kode Barang" required><br>
+            <input type="number" name="jumlah" placeholder="Jumlah" required><br>
+            <input type="text" name="penjelasan" placeholder="Penjelasan" required><br>
+            <button type="submit">Kurangi</button>
+        </form>
+        <a href="/">Kembali ke Menu Utama</a>
+    </div>
+</body>
+</html>

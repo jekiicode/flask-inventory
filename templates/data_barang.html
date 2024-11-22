@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Barang</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Barang</h1>
+        <h2>Gudang</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kode</th>
+                    <th>Nama</th>
+                    <th>Jumlah</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in gudang %}
+                    <tr>
+                        <td>{{ item.kode }}</td>
+                        <td>{{ item.nama }}</td>
+                        <td>{{ item.jumlah }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <h2>Riwayat Penambahan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kode</th>
+                    <th>Nama</th>
+                    <th>Jumlah</th>
+                    <th>Waktu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in penambahan %}
+                    <tr>
+                        <td>{{ item.kode }}</td>
+                        <td>{{ item.nama }}</td>
+                        <td>{{ item.jumlah }} ditambahkan</td>
+                        <td>{{ item.waktu }}</td>  <!-- Menampilkan waktu -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <h2>Riwayat Pengurangan</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Kode</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Keterangan</th>
+                    <th>Waktu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in pengurangan %}
+                    <tr>
+                        <td>{{ item.kode }}</td>
+                        <td>{{ item.nama }}</td>
+                        <td>{{ item.jumlah }}</td>
+                        <td>{{ item.keterangan }}</td>
+                        <td>{{ item.waktu }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+        <a href="/">Kembali ke Menu Utama</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gudang Barang</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gudang Barang</h1>
+        <p>Pilih Aksi</p>
+        
+        <!-- Tombol untuk menambah barang -->
+        <form action="/tambah">
+            <button type="submit">Tambah Barang</button>
+        </form>
+
+        <!-- Tombol untuk menambah jumlah barang -->
+        <form action="/tambah-jumlah">
+            <button type="submit">Tambahkan Jumlah Barang</button>
+        </form>
+
+        <!-- Tombol untuk mengurangi jumlah barang -->
+        <form action="/kurangi">
+            <button type="submit">Kurangi Jumlah Barang</button>
+        </form>
+
+        <!-- Tombol untuk melihat data barang -->
+        <form action="/data-barang">
+            <button type="submit">Lihat Data Barang</button>
+        </form>
+    </div>
+</body>
+</html>
